@@ -81,7 +81,10 @@ int Unit::heal(){
     int healup;
     healup = rand()%21+10;
     hp=hp+healup;
-    if(hp>hpmax) healup-(hp-hpmax);
+    if(hp>hpmax) {
+		healup = healup-(hp-hpmax);
+		hp = hpmax;
+	}
     return healup;
 }
 
